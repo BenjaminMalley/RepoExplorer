@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="row well">
+    <div class="col-xs-8">
+      <h4 data-purpose="org-title">{{ org }}</h4>
+    </div>
+    <div class="col-xs-4">
+      <form class="form-inline" data-purpose="validator" ng-class="{'has-error': filtered.length == 0}">
+        <label>Filter results</label>
+        <input type="search" class="form-control" data-purpose="filter-repos" ng-model="query">
+      </form>
+    </div>
+  </div>
+  <div class="row table-scroll">
+    <table class="table table-hover table-striped col-md-8">
+      <thead>
+        <th ng-repeat="field in sortFields"><a ng-click="setSortKey(field.id)" data-purpose="sort-by-{{field.id}}">{{ field.name }}</a></th>
+        <th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="repo in filtered = (repos|filter:query) | orderBy:sortKey ">
+          <td data-purpose="repo-name">{{ repo.name }}</td>
+          <td>{{ repo.forks_count }}</td>
+          <td>{{ repo.watchers }}</td>
+          <td data-purpose="repo-size">{{ repo.size }}</td>
+          <td><a class="btn btn-default" data-purpose="commits-link" ng-href="/repos/{{ repo.owner.login}}/{{ repo.name }}/commits">Commits</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

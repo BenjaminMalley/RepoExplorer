@@ -1,0 +1,17 @@
+{
+  "name": "RepoExplorer",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.4.8",
+    "grunt": "0.4.2",
+    "http-proxy": "0.10.3",
+    "karma": "0.11.14",
+    "karma-jasmine": "0.2.1"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.1.2",
+    "phantomjs": "~1.9",
+    "protractor": "0.17.0"
+  }
+}
