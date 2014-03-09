@@ -17,7 +17,7 @@
         <th>
       </thead>
       <tbody>
-        <tr ng-repeat="repo in filtered = (repos|filter:query) | orderBy:sortKey ">
+        <tr ng-repeat="repo in filtered = (repos|filter:query) | orderBy:sortKey:reverse">
           <td data-purpose="repo-name"><a ng-href="/repos/{{repo.owner.login}}/{{repo.name}}/commits">{{ repo.name }}</a></td>
           <td>{{ repo.pushed_at | date: 'yyyy-MM-dd' }}</td>
           <td>{{ repo.forks_count }}</td>

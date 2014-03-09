@@ -12,6 +12,16 @@ describe('Repos View', function() {
     });
   });
 
+  it('should reverse the direction of order when Name is clicked', function() {
+    element(protractor.By.css('[data-purpose="sort-by-name"]')).click().then(function() {
+      element.all(protractor.By.css('[data-purpose="repo-name"]')).map(function(elem) {
+        return elem.getText();
+      }).then(function(names) {
+        expect(!!names.reduce(function(a, b) { return a.toLowerCase() >= b.toLowerCase() ? b : false; })).toBe(true);
+      });
+    });
+  });
+
   it('should change the ordering when a different sort key is clicked', function() {
     element(protractor.By.css('[data-purpose="sort-by-size"]')).click().then(function() {
       element.all(protractor.By.css('[data-purpose="repo-size"]')).map(function(elem) {

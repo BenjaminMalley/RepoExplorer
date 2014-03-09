@@ -81,6 +81,20 @@ describe('Controllers', function() {
         expect(scope.setSortKey('foo')).toBe(false);
         expect(scope.sortKey).toBe('name');
       });
+
+      it('should set $scope.reverse to false when called with a new sortKey', function() {
+        scope.reverse = true;
+        scope.setSortKey('forks_count');
+        scope.setSortKey('name');
+        expect(scope.reverse).toBe(false);
+      });
+
+      it('should flip $scope.reverse when called with the value of $scope.sortKey', function() {
+        scope.setSortKey('name');
+        var pre = scope.reverse; // value of reverse after first call
+        scope.setSortKey('name');
+        expect(scope.reverse).toBe(!pre); // expect scope.reverse == !pre
+      })
     });
   });
 

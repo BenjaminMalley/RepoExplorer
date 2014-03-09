@@ -7,7 +7,10 @@ angular.module('app')
   $scope.org = $route.current.params.org;
   $scope.repos = repos;
   $scope.sortKey = 'name';
+  $scope.reverse = false;
   $scope.setSortKey = function(id) {
+    //reverse sort direction on repeated clicks of sort field
+    $scope.reverse = $scope.sortKey === id ? !$scope.reverse : false;
     if ($scope.sortFields.some(function(field) { return field.id == id; })) {
       $scope.sortKey = id;
       return true;
