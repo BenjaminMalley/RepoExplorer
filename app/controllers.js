@@ -17,6 +17,7 @@ angular.module('app')
   };
   $scope.sortFields = [
     { id: "name", name: "Name" },
+    { id: "pushed_at", name: "Last Pushed" },
     { id: "forks_count", name: "Forks" },
     { id: "watchers", name: "Watchers" },
     { id: "size", name: "Size" },
