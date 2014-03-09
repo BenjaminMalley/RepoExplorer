@@ -18,11 +18,10 @@
       </thead>
       <tbody>
         <tr ng-repeat="repo in filtered = (repos|filter:query) | orderBy:sortKey ">
-          <td data-purpose="repo-name">{{ repo.name }}</td>
+          <td data-purpose="repo-name"><a ng-href="/repos/{{repo.owner.login}}/{{repo.name}}/commits">{{ repo.name }}</a></td>
           <td>{{ repo.forks_count }}</td>
           <td>{{ repo.watchers }}</td>
           <td data-purpose="repo-size">{{ repo.size }}</td>
-          <td><a class="btn btn-default" data-purpose="commits-link" ng-href="/repos/{{ repo.owner.login}}/{{ repo.name }}/commits">Commits</a></td>
         </tr>
       </tbody>
     </table>

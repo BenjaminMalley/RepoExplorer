@@ -37,7 +37,7 @@ describe('Repos View', function() {
 
   it('should link to the commits pages for the repos displayed', function() {
     // click on the first commits link and verify that we routed to a valid commits page
-    element(protractor.By.css('[data-purpose="commits-link"]')).click().then(function() {
+    element(protractor.By.css('[data-purpose="repo-name"] a')).click().then(function() {
       expect(element.all(protractor.By.css('[data-purpose="commits-filter"]')).count()).toBe(1);
     });
   });
