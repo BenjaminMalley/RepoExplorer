@@ -33,4 +33,22 @@ angular.module('app')
     controller: "MainCtrl",
   });
 
+}])
+
+.run(['$rootScope', 'ngProgress', function($rootScope, ngProgress) {
+  $rootScope.$on('$locationChangeStart', function(e, route) {
+    if (!ngProgress.status()) {
+      ngProgress.color('#428bca');
+      ngProgress.start();
+    }
+    if ($rootScope.newReleaseFound) {
+      e.preventDefault();
+      $window.location.href = $location.absUrl();
+    }
+  });
+
+  $rootScope.$on('$locationChangeSuccess', function(e, route) {
+    ngProgress.complete();
+  });
+
 }]);
