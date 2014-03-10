@@ -13,8 +13,7 @@
   <div class="row table-scroll">
     <table class="table table-hover table-striped col-md-8">
       <thead>
-        <th ng-repeat="field in sortFields"><a ng-click="setSortKey(field.id)" data-purpose="sort-by-{{field.id}}">{{ field.name }}</a></th>
-        <th>
+        <th ng-repeat="field in sortFields" class="col-md-2"><a ng-click="setSortKey(field.id)" data-purpose="sort-by-{{field.id}}">{{ field.name }}</a></th>
       </thead>
       <tbody>
         <tr ng-repeat="repo in filtered = (repos|filter:query) | orderBy:sortKey:reverse">
