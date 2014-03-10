@@ -23,6 +23,7 @@ angular.module('app')
     { id: "pushed_at", name: "Last Pushed" },
     { id: "forks_count", name: "Forks" },
     { id: "watchers", name: "Watchers" },
+    { id: "open_issues_count", name: "Open Issues" },
     { id: "size", name: "Size" },
   ];
 }])

@@ -60,7 +60,7 @@ describe('Controllers', function() {
     });
 
     it('should create sort fields for sorting repos', function() {
-      expect(scope.sortFields.length).toBe(5);
+      expect(scope.sortFields.length).toBe(6);
     });
 
     it('should sort the repos by name by default', function() {
