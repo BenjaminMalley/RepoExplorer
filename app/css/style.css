@@ -1,8 +1,16 @@
+html, body {
+  height: 100%;
+}
+
+.container, .fill {
+  height: 90%;
+}
+
 body {
   padding-top: 60px;
 }
 
 .table-scroll {
-    height: 600px;
-    overflow: auto;
+  height: 95%;
+  overflow: auto;
 }
