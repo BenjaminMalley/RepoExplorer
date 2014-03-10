@@ -13,7 +13,7 @@ var http = require('http'),
 app.use(express.logger('dev'));
 
 // serve static resources
-['/app', '/vendor'].forEach(function(route) {
+['/app', '/vendor', '/lib'].forEach(function(route) {
   app.use(route, express.static(__dirname + route));
 });
 
